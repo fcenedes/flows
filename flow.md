@@ -19,7 +19,7 @@ custom_markflo
 custom_markschema        
 @startuml
 
-namespace "HIVE TABLES" #DDDDDD {
+
 class Events {
    CASE_ID : String
    ACTIVITY_ID : String
@@ -46,7 +46,7 @@ class Sources {
 Events <|-- Cases
 Cases *-- Variants
 Events o-- "4" Sources
-}
+
 @enduml
 custom_markschema
 </details>
