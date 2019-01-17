@@ -21,23 +21,23 @@ custom_markschema
 
 
 class Events {
-   CASE_ID : String
+   {field} CASE_ID : String
    ACTIVITY_ID : String
    APP_ID : Integer
 }
 
 class Cases {
-   CASE_ID : String
+  {field} CASE_ID : String
    VARIANT_ID : String
 }
 
 class Variants {
-   VARIANT_ID : String
+   {field} VARIANT_ID : String
    Graph : Seq[String]
 }
 
 class Sources {
-   APP_ID : Integer
+   {field} APP_ID : Integer
    APP_NAME : String
    APP_TYPE : Integer
 }
