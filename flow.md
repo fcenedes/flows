@@ -18,7 +18,8 @@ custom_markflo
 <summary></summary>
 custom_markschema        
 @startuml
-  
+
+namespace "HIVE TABLES" #DDDDDD {
 class Events {
    CASE_ID : String
    ACTIVITY_ID : String
@@ -42,7 +43,6 @@ class Sources {
 }
 
 
-namespace "HIVE TABLES" #DDDDDD {
 Events <|-- Cases
 Cases *-- Variants
 Events o-- "4" Sources
