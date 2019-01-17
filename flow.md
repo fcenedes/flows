@@ -18,10 +18,29 @@ custom_markflo
 <summary></summary>
 custom_markschema        
 @startuml
-object Events 
-object Cases
-object Variants
-object Sources
+  
+class Events {
+   CASE_ID : String
+   ACTIVITY_ID : String
+   APP_ID : Integer
+}
+
+class Cases {
+   CASE_ID : String
+   VARIANT_ID : String
+}
+
+class Variants {
+   VARIANT_ID : String
+   Graph : Seq[String]
+}
+
+class Sources {
+   APP_ID : Integer
+   APP_NAME : String
+   APP_TYPE : Integer
+}
+
 
 
 Events <|-- Cases
