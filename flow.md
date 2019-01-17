@@ -8,8 +8,8 @@ custom_markflo
     parse -> Cleanup;
     Cleanup -> Normalise;
     Normalise -> { process_miner; store};
-    process_miner [label="make a string"];
-    store [shape=box,style=filled,color=".7 .3 1.0"];
+    process_miner [label="Process Mining"];
+    store [shape=box,style=filled,color=".7 .3 1.0", label="temp storage"];
   }
 custom_markflo
 </details>
