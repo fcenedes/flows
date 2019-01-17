@@ -13,3 +13,20 @@ custom_markflo
   }
 custom_markflo
 </details>
+
+<details> 
+<summary></summary>
+custom_markschema        
+@startuml
+object Events 
+object Cases
+object Variants
+object Sources
+
+
+Events <|-- Cases
+Cases *-- Variants
+Events o-- "4" Sources
+@enduml
+custom_markschema
+</details>
