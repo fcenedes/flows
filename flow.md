@@ -42,7 +42,7 @@ class Sources {
 }
 
 
-namespace HIVE TABLES #DDDDDD {
+namespace "HIVE TABLES" #DDDDDD {
 Events <|-- Cases
 Cases *-- Variants
 Events o-- "4" Sources
