@@ -20,12 +20,13 @@ custom_markschema
 @startuml
 
 class Events {
+   .. Mandatory ..
    -CASE_ID : String
    -CASE_ACTIVITY_ID : String
    -APP_ID : Integer
    -CASE_START_TIMESTAMP : Timestamp
    -CASE_RESOURCE_ID : String
-   ..
+   -- calculated --
    +CASE_END_TIMESTAMP : Timestamp
    +NEXT_CASE_RESOURCE_ID : String
    +PREV_CASE_RESOURCE_ID : String
@@ -60,9 +61,9 @@ class Applications {
 }
 
 
-Events <|-- Cases : < CASE_ID
-Cases <|-- Variants : < VARIANT_ID
-Events <|-- Applications : < APP_ID
+Events <|-- Cases : <CASE_ID
+Cases <|-- Variants : <VARIANT_ID
+Events <|-- Applications : <APP_ID
 
 @enduml
 custom_markschema
