@@ -19,14 +19,15 @@ custom_markflo
 custom_markschema        
 @startuml
 
-package ProcessMiner output #GreenYellow/LightGoldenRodYellow {
+package ProcessMiner #GreenYellow/LightGoldenRodYellow {
 object Events {
    -CASE_ID = "String"
    -CASE_ACTIVITY_ID = String
    -APP_ID = Integer
    -CASE_START_TIMESTAMP = Timestamp
-   +CASE_END_TIMESTAMP = Timestamp
    -CASE_RESOURCE_ID = String
+   ..
+   +CASE_END_TIMESTAMP = Timestamp
    +NEXT_CASE_RESOURCE_ID = String
    +PREV_CASE_RESOURCE_ID = String
    +NEXT_CASE_ACTIVITY_ID = String
