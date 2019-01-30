@@ -20,7 +20,7 @@ custom_markschema
 @startuml
 
 
-class Events {
+Object Events {
    -CASE_ID : String
    -CASE_ACTIVITY_ID : String
    -APP_ID : Integer
@@ -41,18 +41,18 @@ class Events {
    
 }
 
-class Cases {
+Object Cases {
   #CASE_ID : String
   #VARIANT_ID : String
   #VARIANTS : Seq[String]
 }
 
-class Variants {
+Object Variants {
    #VARIANT_ID : String
    #VARIANTS : Seq[String]
 }
 
-class Applications {
+Object Applications {
    -APP_ID : Integer
    -APP_NAME : String
    -APP_TYPE : Integer
