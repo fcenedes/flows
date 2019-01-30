@@ -21,31 +21,49 @@ custom_markschema
 
 
 class Events {
-   {field} CASE_ID : String
-   ACTIVITY_ID : String
+   CASE_ID : String
+   CASE_ACTIVITY_ID : String
    APP_ID : Integer
+   CASE_START_TIMESTAMP : Timestamp
+   CASE_END_TIMESTAMP : Timestamp
+   CASE_RESOURCE_ID : String
+   NEXT_CASE_RESOURCE_ID : String
+   PREV_CASE_RESOURCE_ID : String
+   NEXT_CASE_ACTIVITY_ID : String
+   PREV_CASE_ACTIVITY_ID : String
+   EDGE : String
+   REPEAT_SELF_LOOP_FLAG : Integer
+   REDO_SELF_LOOP_FLAG : Integer
+   START_FLAG : Integer
+   END_FLAG : Integer
+   DURATION_DAYS : Long
+   DURATION_SEC : Long
+   
 }
 
 class Cases {
-  {field} CASE_ID : String
-   VARIANT_ID : String
+  CASE_ID : String
+  VARIANT_ID : String
+  VARIANTS : Seq[String]
 }
 
 class Variants {
-   {field} VARIANT_ID : String
-   Graph : Seq[String]
+   VARIANT_ID : String
+   VARIANTS : Seq[String]
 }
 
-class Sources {
-   {field} APP_ID : Integer
+class Applications {
+   APP_ID : Integer
    APP_NAME : String
    APP_TYPE : Integer
+   APP_URL : String
+   APP_DESCRIPTION : String
 }
 
 
 Events <|-- Cases
 Cases *-- Variants
-Events o-- "4" Sources
+Events o-- Applications
 
 @enduml
 custom_markschema
