@@ -19,7 +19,7 @@ custom_markflo
 custom_markschema        
 @startuml
 
-class Events {
+class Events << (T,orchid) >> {
    .. Mandatory ..
    -CASE_ID : String
    -CASE_ACTIVITY_ID : String
@@ -41,18 +41,18 @@ class Events {
    +DURATION_SEC : Long  
 }
 
-class Cases {
+class Cases << (T,orchid) >> {
   #CASE_ID : String
   #VARIANT_ID : String
   #VARIANTS : Seq[String]
 }
 
-class Variants {
+class Variants << (T,orchid) >> {
    #VARIANT_ID : String
    #VARIANTS : Seq[String]
 }
 
-class Applications {
+class Applications << (T,orchid) >> {
    -APP_ID : Integer
    -APP_NAME : String
    -APP_TYPE : Integer
