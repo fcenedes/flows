@@ -19,51 +19,49 @@ custom_markflo
 custom_markschema        
 @startuml
 
-class Events << (T,orchid) >> {
-   .. Mandatory ..
-   -CASE_ID : String
-   -CASE_ACTIVITY_ID : String
-   -APP_ID : Integer
-   -CASE_START_TIMESTAMP : Timestamp
-   -CASE_RESOURCE_ID : String
-   -- calculated --
-   +CASE_END_TIMESTAMP : Timestamp
-   +NEXT_CASE_RESOURCE_ID : String
-   +PREV_CASE_RESOURCE_ID : String
-   +NEXT_CASE_ACTIVITY_ID : String
-   +PREV_CASE_ACTIVITY_ID : String
-   +EDGE : String
-   +REPEAT_SELF_LOOP_FLAG : Integer
-   +REDO_SELF_LOOP_FLAG : Integer
-   +START_FLAG : Integer
-   +END_FLAG : Integer
-   +DURATION_DAYS : Long
-   +DURATION_SEC : Long  
+class Events <<(T,orchid)>> {
+.. Mandatory ..
+-CASE_ID : String
+-CASE_ACTIVITY_ID : String
+-APP_ID : Integer
+-CASE_START_TIMESTAMP : Timestamp
+-CASE_RESOURCE_ID : String
+-- calculated --
++CASE_END_TIMESTAMP : Timestamp
++NEXT_CASE_RESOURCE_ID : String
++PREV_CASE_RESOURCE_ID : String
++NEXT_CASE_ACTIVITY_ID : String
++PREV_CASE_ACTIVITY_ID : String
++EDGE : String
++REPEAT_SELF_LOOP_FLAG : Integer
++REDO_SELF_LOOP_FLAG : Integer
++START_FLAG : Integer
++END_FLAG : Integer
++DURATION_DAYS : Long
++DURATION_SEC : Long  
 }
 
-class Cases << (T,orchid) >> {
-  #CASE_ID : String
-  #VARIANT_ID : String
-  #VARIANTS : Seq[String]
+class Cases <<(T,orchid)>> {
+#CASE_ID : String
+#VARIANT_ID : String
+#VARIANTS : Seq[String]
 }
 
-class Variants << (T,orchid) >> {
-   #VARIANT_ID : String
-   #VARIANTS : Seq[String]
+class Variants <<(T,orchid)>> {
+ #VARIANT_ID : String
+ #VARIANTS : Seq[String]
 }
 
-class Applications << (T,orchid) >> {
-   -APP_ID : Integer
-   -APP_NAME : String
-   -APP_TYPE : Integer
-   -APP_URL : String
-   -APP_DESCRIPTION : String
+class Applications <<(T,orchid)>> {
+-APP_ID : Integer
+-APP_NAME : String
+-APP_TYPE : Integer
+-APP_URL : String
+-APP_DESCRIPTION : String
 }
-
-
-Events <|-- Cases : <CASE_ID
-Cases <|-- Variants : <VARIANT_ID
-Events <|-- Applications : <APP_ID
+Events <|-- Cases : < CASE_ID
+Cases <|-- Variants : < VARIANT_ID
+Events <|-- Applications : < APP_ID
 
 @enduml
 custom_markschema
