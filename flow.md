@@ -19,7 +19,7 @@ custom_markflo
 custom_markschema        
 @startuml
 
-class Events <<%28T,orchid%28>> {
+class Events <<(T,orchid)>> {
 .. Mandatory ..
 -CASE_ID : String
 -CASE_ACTIVITY_ID : String
