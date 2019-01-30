@@ -21,49 +21,49 @@ custom_markschema
 
 
 class Events {
-   CASE_ID : String
-   CASE_ACTIVITY_ID : String
-   APP_ID : Integer
-   CASE_START_TIMESTAMP : Timestamp
-   CASE_END_TIMESTAMP : Timestamp
-   CASE_RESOURCE_ID : String
-   NEXT_CASE_RESOURCE_ID : String
-   PREV_CASE_RESOURCE_ID : String
-   NEXT_CASE_ACTIVITY_ID : String
-   PREV_CASE_ACTIVITY_ID : String
-   EDGE : String
-   REPEAT_SELF_LOOP_FLAG : Integer
-   REDO_SELF_LOOP_FLAG : Integer
-   START_FLAG : Integer
-   END_FLAG : Integer
-   DURATION_DAYS : Long
-   DURATION_SEC : Long
+   -CASE_ID : String
+   -CASE_ACTIVITY_ID : String
+   -APP_ID : Integer
+   -CASE_START_TIMESTAMP : Timestamp
+   +CASE_END_TIMESTAMP : Timestamp
+   -CASE_RESOURCE_ID : String
+   +NEXT_CASE_RESOURCE_ID : String
+   +PREV_CASE_RESOURCE_ID : String
+   +NEXT_CASE_ACTIVITY_ID : String
+   +PREV_CASE_ACTIVITY_ID : String
+   +EDGE : String
+   +REPEAT_SELF_LOOP_FLAG : Integer
+   +REDO_SELF_LOOP_FLAG : Integer
+   +START_FLAG : Integer
+   +END_FLAG : Integer
+   +DURATION_DAYS : Long
+   +DURATION_SEC : Long
    
 }
 
 class Cases {
-  CASE_ID : String
-  VARIANT_ID : String
-  VARIANTS : Seq[String]
+  #CASE_ID : String
+  #VARIANT_ID : String
+  #VARIANTS : Seq[String]
 }
 
 class Variants {
-   VARIANT_ID : String
-   VARIANTS : Seq[String]
+   #VARIANT_ID : String
+   #VARIANTS : Seq[String]
 }
 
 class Applications {
-   APP_ID : Integer
-   APP_NAME : String
-   APP_TYPE : Integer
-   APP_URL : String
-   APP_DESCRIPTION : String
+   -APP_ID : Integer
+   -APP_NAME : String
+   -APP_TYPE : Integer
+   -APP_URL : String
+   -APP_DESCRIPTION : String
 }
 
 
 Events <|-- Cases
-Cases *-- Variants
-Events o-- Applications
+Cases <|-- Variants
+Events <|-- Applications
 
 @enduml
 custom_markschema
