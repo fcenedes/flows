@@ -21,7 +21,7 @@ custom_markschema
 
 
 Object Events {
-   -CASE_ID = String
+   -CASE_ID = "String"
    -CASE_ACTIVITY_ID = String
    -APP_ID = Integer
    -CASE_START_TIMESTAMP = Timestamp
