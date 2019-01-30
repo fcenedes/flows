@@ -20,24 +20,24 @@ custom_markschema
 @startuml
 
 object Events {
-   -CASE_ID = "String"
-   -CASE_ACTIVITY_ID = String
-   -APP_ID = Integer
-   -CASE_START_TIMESTAMP = Timestamp
-   -CASE_RESOURCE_ID = String
+   -CASE_ID : String
+   -CASE_ACTIVITY_ID : String
+   -APP_ID : Integer
+   -CASE_START_TIMESTAMP : Timestamp
+   -CASE_RESOURCE_ID : String
    ..
-   +CASE_END_TIMESTAMP = Timestamp
-   +NEXT_CASE_RESOURCE_ID = String
-   +PREV_CASE_RESOURCE_ID = String
-   +NEXT_CASE_ACTIVITY_ID = String
-   +PREV_CASE_ACTIVITY_ID = String
-   +EDGE = String
-   +REPEAT_SELF_LOOP_FLAG = Integer
-   +REDO_SELF_LOOP_FLAG = Integer
-   +START_FLAG = Integer
-   +END_FLAG = Integer
-   +DURATION_DAYS = Long
-   +DURATION_SEC = Long  
+   +CASE_END_TIMESTAMP : Timestamp
+   +NEXT_CASE_RESOURCE_ID : String
+   +PREV_CASE_RESOURCE_ID : String
+   +NEXT_CASE_ACTIVITY_ID : String
+   +PREV_CASE_ACTIVITY_ID : String
+   +EDGE : String
+   +REPEAT_SELF_LOOP_FLAG : Integer
+   +REDO_SELF_LOOP_FLAG : Integer
+   +START_FLAG : Integer
+   +END_FLAG : Integer
+   +DURATION_DAYS : Long
+   +DURATION_SEC : Long  
 }
 
 object Cases {
