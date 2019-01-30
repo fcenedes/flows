@@ -19,7 +19,7 @@ custom_markflo
 custom_markschema        
 @startuml
 
-object Events {
+class Events {
    -CASE_ID : String
    -CASE_ACTIVITY_ID : String
    -APP_ID : Integer
@@ -40,29 +40,29 @@ object Events {
    +DURATION_SEC : Long  
 }
 
-object Cases {
-  #CASE_ID = String
-  #VARIANT_ID = String
-  #VARIANTS = Seq[String]
+class Cases {
+  #CASE_ID : String
+  #VARIANT_ID : String
+  #VARIANTS : Seq[String]
 }
 
-object Variants {
-   #VARIANT_ID = String
-   #VARIANTS = Seq[String]
+class Variants {
+   #VARIANT_ID : String
+   #VARIANTS : Seq[String]
 }
 
-object Applications {
-   -APP_ID = Integer
-   -APP_NAME = String
-   -APP_TYPE = Integer
-   -APP_URL = String
-   -APP_DESCRIPTION = String
+class Applications {
+   -APP_ID : Integer
+   -APP_NAME : String
+   -APP_TYPE : Integer
+   -APP_URL : String
+   -APP_DESCRIPTION : String
 }
 
 
-Events <|-- Cases : <CASE_ID>
-Cases <|-- Variants : <VARIANT_ID>
-Events <|-- Applications : <APP_ID>
+Events <|-- Cases : < CASE_ID
+Cases <|-- Variants : < VARIANT_ID
+Events <|-- Applications : < APP_ID
 
 @enduml
 custom_markschema
