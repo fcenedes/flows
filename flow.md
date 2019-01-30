@@ -19,7 +19,7 @@ custom_markflo
 custom_markschema        
 @startuml
 
-
+package ProcessMiner output #GreenYellow/LightGoldenRodYellow {
 object Events {
    -CASE_ID = "String"
    -CASE_ACTIVITY_ID = String
@@ -37,10 +37,9 @@ object Events {
    +START_FLAG = Integer
    +END_FLAG = Integer
    +DURATION_DAYS = Long
-   +DURATION_SEC = Long
-   
+   +DURATION_SEC = Long  
 }
-
+}
 object Cases {
   #CASE_ID = String
   #VARIANT_ID = String
